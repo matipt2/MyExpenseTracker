@@ -17,20 +17,12 @@ import java.util.List;
 public class ExpenseController {
     private List<Expense> expenses;
     public ExpenseController(){
-        Expense expense1 = new Expense("opis", new BigDecimal("1.50"));
-        Expense expense2 = new Expense("oddd", new BigDecimal("6.27"));
-        Expense expense3 = new Expense("fdfis", new BigDecimal("542.2"));
-        Expense expense4 = new Expense("ocxzcxs", new BigDecimal("23.4"));
+
         expenses = new ArrayList<>();
-        expenses.add(expense1);
-        expenses.add(expense2);
-        expenses.add(expense3);
-        expenses.add(expense4);
 
     }
     @GetMapping("/expense")
     public String getExpense(Model model){
-
         model.addAttribute("expenses", expenses);
         model.addAttribute("newExpense", new Expense());
         return "expense";
