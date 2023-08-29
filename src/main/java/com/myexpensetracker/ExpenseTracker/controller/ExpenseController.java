@@ -30,6 +30,7 @@ public class ExpenseController {
 
     @PostMapping("/add-expense")
     public String addExpense(@ModelAttribute Expense expense){
+
         expenses.add(expense);
         return "redirect:/expense";
     }
