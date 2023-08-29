@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +28,7 @@ public class ExpenseController {
     @GetMapping("/expense")
     public String getExpense(Model model){
         List<Expense> expenses = expenseRepository.findAll();
+
         model.addAttribute("expenses", expenseRepository.findAll());
         model.addAttribute("newExpense", new Expense());
         return "expense";

@@ -29,7 +29,6 @@ public class Expense {
     public Expense(){
 
     }
-
     public Expense(String description, BigDecimal price){
         this.description = description;
         this.price = price;
