@@ -2,11 +2,10 @@
 
 This is a simple web-based expense tracker application developed using Spring Boot and Thymeleaf. It allows users to log in, view a list of expenses, and add new expenses to their records.
 
-## Prerequisites
+## Created with:
 
-Before you begin, ensure you have met the following requirements:
 
-- **Java Development Kit (JDK) 8 or later**
+- **Java Development Kit (JDK)**
 - **Maven**
 - **Spring Boot**
 - **H2 Database**
