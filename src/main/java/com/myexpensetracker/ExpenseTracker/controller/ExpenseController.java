@@ -21,9 +21,6 @@ public class ExpenseController {
     @Autowired
     public ExpenseController(ExpenseRepository expenseRepository){
         this.expenseRepository = expenseRepository;
-
-
-
     }
     @GetMapping("/expense")
     public String getExpense(Model model){
@@ -36,8 +33,8 @@ public class ExpenseController {
 
     @PostMapping("/add-expense")
     public String addExpense(@ModelAttribute Expense expense){
-
         expenseRepository.save(expense);
         return "redirect:/expense";
     }
+
 }
