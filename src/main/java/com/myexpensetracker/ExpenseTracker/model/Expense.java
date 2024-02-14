@@ -1,9 +1,9 @@
 package com.myexpensetracker.ExpenseTracker.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
@@ -13,8 +13,11 @@ import java.math.BigDecimal;
 public class Expense {
     @Id
     @GeneratedValue
+    @Column
     private Long id;
+    @Column
     private String description;
+    @Column
     private BigDecimal price;
 
 
