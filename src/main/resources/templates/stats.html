@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Expense Stats</title>
+    <link rel="stylesheet" type="text/css" href="/css/statsPage.css">
+</head>
+<body>
+<h1>Expense Statistics</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Statistic</th>
+        <th>Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Highest Cost</td>
+        <td th:text="${highestCost}"></td>
+    </tr>
+    <tr>
+        <td>Lowest Cost</td>
+        <td th:text="${lowestCost}"></td>
+    </tr>
+    <tr>
+        <td>Average Cost</td>
+        <td th:text="${averageCost}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

@@ -3,36 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Expense Tracker</title>
-    <link rel="stylesheet" type="text/css" href="/css/style1.css">
+    <link rel="stylesheet" type="text/css" href="/css/expansePage.css">
 </head>
 <body>
-    <h1>Expense Tracker</h1>
-    <div class="main-content">
-        <h2>Expenses List</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Description</th>
-                    <th>Price</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="expense : ${expenses}">
-                    <td th:text="${expense.description}"></td>
-                    <td th:text="${expense.price}"></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="add-expense-form">
-        <h2>Add New Expense</h2>
-        <form th:action="@{/add-expense}" th:object="${newExpense}" method="post">
-            <label for="description">Description:</label>
-            <input type="text" id="description" th:field="*{description}" required><br>
-            <label for="price">Price:</label>
-            <input type="number" id="price" th:field="*{price}" required><br>
-            <button type="submit">Add Expense</button>
-        </form>
-    </div>
+<h1>Expense Tracker</h1>
+<div class="main-content">
+    <h2>Expenses List</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="expense : ${expenses}">
+            <td th:text="${expense.description}"></td>
+            <td th:text="${expense.price}"></td>
+            <td>
+                <form th:action="@{/delete-expense}" method="post">
+                    <input type="hidden" name="expenseId" th:value="${expense.id}" />
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="add-expense-form">
+    <h2>Add New Expense</h2>
+    <form th:action="@{/add-expense}" th:object="${newExpense}" method="post">
+        <label for="description">Description:</label>
+        <input type="text" id="description" th:field="*{description}" required><br>
+        <label for="price">Price:</label>
+        <input type="number" id="price" th:field="*{price}" required><br>
+        <button type="submit">Add Expense</button>
+    </form>
+</div>
 </body>
 </html>
