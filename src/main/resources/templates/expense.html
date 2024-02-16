@@ -6,9 +6,14 @@
     <link rel="stylesheet" type="text/css" href="/css/expansePage.css">
 </head>
 <body>
-<h1>Expense Tracker</h1>
+
 <div class="main-content">
     <h2>Expenses List</h2>
+    <div class="button-container">
+        <button type="button" onclick="window.print()" class="button">Print</button>
+        <button type="button" onclick="window.location.href='/saveToCSV'" class="button">Save to CSV</button>
+        <button type="button" onclick="window.location.href='/stats'" class="button">Statistics</button>
+    </div>
     <table>
         <thead>
         <tr>
@@ -22,7 +27,7 @@
             <td th:text="${expense.description}"></td>
             <td th:text="${expense.price}"></td>
             <td>
-                <form th:action="@{/delete-expense}" method="post">
+                <form action="/delete-expense" method="post">
                     <input type="hidden" name="expenseId" th:value="${expense.id}" />
                     <button type="submit">Delete</button>
                 </form>
@@ -33,7 +38,7 @@
 </div>
 <div class="add-expense-form">
     <h2>Add New Expense</h2>
-    <form th:action="@{/add-expense}" th:object="${newExpense}" method="post">
+    <form action="/add-expense" th:object="${newExpense}" method="post">
         <label for="description">Description:</label>
         <input type="text" id="description" th:field="*{description}" required><br>
         <label for="price">Price:</label>
@@ -41,5 +46,6 @@
         <button type="submit">Add Expense</button>
     </form>
 </div>
+
 </body>
 </html>

@@ -8,11 +8,13 @@ import java.util.List;
 
 @Service
 public class StatsService {
-    private final ExpenseRepository expenseRepository;
+    private ExpenseRepository expenseRepository;
 
     @Autowired
     public StatsService(ExpenseRepository expenseRepository) {
         this.expenseRepository = expenseRepository;
+    }
+    public StatsService(){
     }
     public BigDecimal findMinimumCost(){
         List<Expense> expenses = expenseRepository.findAll();

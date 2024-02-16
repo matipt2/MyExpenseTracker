@@ -24,10 +24,10 @@
     var expenseChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Lowest Cost', 'Highest Cost', 'Average Cost'],
+            labels: ['Lowest Cost', 'Average Cost', 'Highest Cost'],
             datasets: [{
                 label: 'Expense Stats',
-                data: [lowestCost, highestCost, averageCost],
+                data: [lowestCost,averageCost, highestCost],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -45,7 +45,7 @@
             scales: {
                 y: {
                     beginAtZero: true,
-                    suggestedMax: parseFloat(highestCost) + (parseFloat(highestCost) * 0.1) // Dodajemy 10% do maksymalnej wartości
+                    suggestedMax: parseFloat(highestCost) + (parseFloat(highestCost) * 0.1)
                 }
             }
         }
