@@ -5,6 +5,7 @@ import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.List;
 
 public class CSVPrinterService {
@@ -14,19 +15,19 @@ public class CSVPrinterService {
     }
 
     public CSVPrinterService(){
-
     }
 
     public void printToCSV(ExpenseRepository expenseRepository){
-        StatsService statsService = new StatsService();
+        StatsService statsService = new StatsService(expenseRepository);
         List<Expense> expenseList = expenseRepository.findAll();
         try(CSVPrinter csvPrinter = new CSVPrinter(new FileWriter("csv.txt"), CSVFormat.EXCEL)){
-            csvPrinter.printRecord("ID", "Price", "Description");
+            csvPrinter.printRecord("ID ", " Price ", " Description ");
             for(Expense expense: expenseList){
                 csvPrinter.printRecord(expense.getId(), expense.getPrice(), expense.getDescription());
             }
-            csvPrinter.printRecord("Minimum cost", "Highest cost", "Average Cost");
-            csvPrinter.printRecord(statsService.findMinimumCost(),statsService.findHighestCost(),statsService.findAverageCost());
+            csvPrinter.printRecord("Minimum cost ", " Highest cost ", " Average Cost ");
+            BigDecimal minimumCost = new BigDecimal(String.valueOf(statsService.findMinimumCost()));
+            csvPrinter.printRecord(minimumCost,statsService.findHighestCost(),statsService.findAverageCost());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

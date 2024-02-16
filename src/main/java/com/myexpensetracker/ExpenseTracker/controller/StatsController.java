@@ -1,5 +1,6 @@
 package com.myexpensetracker.ExpenseTracker.controller;
 
+import com.myexpensetracker.ExpenseTracker.repository.ExpenseRepository;
 import com.myexpensetracker.ExpenseTracker.service.StatsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +13,7 @@ public class StatsController {
 
     private final StatsService statsService;
 
+
     @Autowired
     public StatsController(StatsService statsService) {
         this.statsService = statsService;
@@ -20,6 +22,7 @@ public class StatsController {
     @GetMapping("/stats")
     public String getStats(Model model) {
         try {
+
             model.addAttribute("lowestCost", statsService.findMinimumCost());
             model.addAttribute("highestCost", statsService.findHighestCost());
             model.addAttribute("averageCost", statsService.findAverageCost());

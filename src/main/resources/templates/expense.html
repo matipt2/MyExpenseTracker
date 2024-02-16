@@ -11,7 +11,7 @@
     <h2>Expenses List</h2>
     <div class="button-container">
         <button type="button" onclick="window.print()" class="button">Print</button>
-        <button type="button" onclick="window.location.href='/saveToCSV'" class="button">Save to CSV</button>
+        <button type="button" class="button" th:onclick="|window.location.href='@{/saveToCSV}'|">Save to CSV</button>
         <button type="button" onclick="window.location.href='/stats'" class="button">Statistics</button>
     </div>
     <table>
