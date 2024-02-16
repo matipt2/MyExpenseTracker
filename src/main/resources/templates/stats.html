@@ -1,33 +1,55 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Stats</title>
-    <link rel="stylesheet" type="text/css" href="/css/statsPage.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        h1 {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 <h1>Expense Statistics</h1>
-<table>
-    <thead>
-    <tr>
-        <th>Statistic</th>
-        <th>Value</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>Highest Cost</td>
-        <td th:text="${highestCost}"></td>
-    </tr>
-    <tr>
-        <td>Lowest Cost</td>
-        <td th:text="${lowestCost}"></td>
-    </tr>
-    <tr>
-        <td>Average Cost</td>
-        <td th:text="${averageCost}"></td>
-    </tr>
-    </tbody>
-</table>
+<canvas id="expenseChart" th:width="700" th:height="300"></canvas>
+
+<script th:inline="javascript">
+    var lowestCost = /*[[${lowestCost}]]*/ '0';
+    var highestCost = /*[[${highestCost}]]*/ '0';
+    var averageCost = /*[[${averageCost}]]*/ '0';
+
+    var ctx = document.getElementById('expenseChart').getContext('2d');
+    var expenseChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Lowest Cost', 'Highest Cost', 'Average Cost'],
+            datasets: [{
+                label: 'Expense Stats',
+                data: [lowestCost, highestCost, averageCost],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    suggestedMax: parseFloat(highestCost) + (parseFloat(highestCost) * 0.1) // Dodajemy 10% do maksymalnej wartości
+                }
+            }
+        }
+    });
+</script>
 </body>
 </html>
