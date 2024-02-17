@@ -1,5 +1,4 @@
 package com.myexpensetracker.ExpenseTracker.controller;
-
 import com.myexpensetracker.ExpenseTracker.model.Expense;
 import com.myexpensetracker.ExpenseTracker.repository.ExpenseRepository;
 import org.springframework.beans.factory.annotation.Autowired;

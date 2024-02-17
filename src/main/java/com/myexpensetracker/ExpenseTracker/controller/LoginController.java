@@ -1,5 +1,4 @@
 package com.myexpensetracker.ExpenseTracker.controller;
-
 import com.myexpensetracker.ExpenseTracker.model.LoginForm;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

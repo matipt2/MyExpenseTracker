@@ -11,8 +11,5 @@ import org.springframework.web.bind.annotation.RequestMapping;
             return "error";
         }
 
-        public String getErrorPath() {
-            return "/error";
-        }
     }
 

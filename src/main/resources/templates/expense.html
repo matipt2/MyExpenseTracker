@@ -26,10 +26,15 @@
         <tr th:each="expense : ${expenses}">
             <td th:text="${expense.description}"></td>
             <td th:text="${expense.price}"></td>
-            <td>
-                <form action="/delete-expense" method="post">
+            <td class="action-buttons">
+                <form action="/delete-expense" method="post" class="action-form">
                     <input type="hidden" name="expenseId" th:value="${expense.id}" />
                     <button type="submit">Delete</button>
+                </form>
+                <form action="/edit-expense" method="post" class="action-form">
+                    <input type="hidden" name="expenseId" th:value="${expense.id}" />
+                    <button type="submit">Edit</button>
+
                 </form>
             </td>
         </tr>
@@ -49,3 +54,4 @@
 
 </body>
 </html>
+

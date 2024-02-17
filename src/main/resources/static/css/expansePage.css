@@ -88,3 +88,7 @@ button:hover {
     justify-content: space-between;
     margin-bottom: 10px;
 }
+.action-buttons .action-form {
+    display: inline-block;
+    margin-right: 10px;
+}
