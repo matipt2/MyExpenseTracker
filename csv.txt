@@ -1,0 +1,7 @@
+"ID "," Price "," Description "
+553,400.00,321
+602,323.00,e
+652,44.00,lotasiet
+802,3.00,321
+"Minimum cost "," Highest cost "," Average Cost "
+3.00,400.00,192.50
