@@ -1,33 +1,49 @@
 # Expense Tracker Application
 
-This is a simple web-based expense tracker application developed using Spring Boot and Thymeleaf. It allows users to log in, view a list of expenses, and add new expenses to their records.
+Expense Tracker is a simple web application designed to help users track their expenses. It allows users to add, delete, and view their expenses, as well as filter them based on minimum and maximum values. Additionally, it provides statistics on the expenses, including the lowest, highest, and average costs.
 
-## Created with:
+## Features
 
+- **Add Expense**: Users can add new expenses by providing a description and price.
+- **Delete Expense**: Users can delete existing expenses from the list.
+- **View Expenses**: Users can view all their expenses in a tabular format.
+- **Filter by Minimum**: Users can filter expenses to see the ones with the lowest prices.
+- **Filter by Maximum**: Users can filter expenses to see the ones with the highest prices.
+- **Save to CSV**: Users can save their expenses to a CSV file for further analysis.
+- **Statistics**: Users can view statistics on their expenses, including the lowest, highest, and average costs, presented in a bar chart.
 
-- **Java Development Kit (JDK)**
-- **Maven**
-- **Spring Boot**
-- **H2 Database**
+## Technologies Used
+
+- **Java**: The backend of the application is developed using Java.
+- **Spring Boot**: Spring Boot is used for building the web application.
+- **Thymeleaf**: Thymeleaf is used as the template engine for server-side processing.
+- **MySQL**: MySQL is used as the database to store expense data.
+- **Apache Commons CSV**: Apache Commons CSV is used to handle CSV file operations.
+- **Chart.js**: Chart.js is used to create interactive charts for expense statistics.
+
+## Getting Started
+
+To run the Expense Tracker application locally, follow these steps:
+
+1. Clone the repository: `git clone <repository-url>`
+2. Navigate to the project directory: `cd ExpenseTracker`
+3. Build the project: `./mvnw clean package`
+4. Run the application: `java -jar target/ExpenseTracker-0.0.1-SNAPSHOT.jar`
+5. Access the application in your web browser at `http://localhost:8080`
 
 ## Usage
 
-To start using the Expense Tracker Application, follow these steps:
+1. **Adding Expense**: Click on the "Add New Expense" section, enter the description and price of the expense, then click "Add".
+2. **Deleting Expense**: Each expense in the list has a "Delete" button. Click on it to delete the corresponding expense.
+3. **Filtering Expenses**: Use the "Filter by Minimum" and "Filter by Maximum" buttons to filter expenses based on their prices.
+4. **Saving to CSV**: Click on the "Save to CSV" button to save all expenses to a CSV file.
+5. **Viewing Statistics**: Click on the "Statistics" button to view statistics on expenses, including lowest, highest, and average costs.
 
-### Logging In
+## Contributors
 
-1. **Access the Login Page**:
-   - Navigate to [http://localhost:8080/login](http://localhost:8080/login) in your web browser.
+This project was developed by Mateusz Ptasik. Feel free to contribute by submitting bug reports, feature requests, or pull requests.
 
-2. **Log In**:
-   - Use the following default credentials:
-     - **Username:** admin
-     - **Password:** admin
+## License
 
-### Expense Tracking
-Once logged in, you will be redirected to the expense tracking page at http://localhost:8080/expense.
-Here, you can view a list of your expenses and add new expenses.
-Adding an Expense
-To add a new expense, fill out the "Add New Expense" form on the expense tracking page.
-Enter a description and the price of the expense.
-Click the "Add Expense" button to save the expense.
+This project is licensed under the [MIT License](LICENSE).
+
