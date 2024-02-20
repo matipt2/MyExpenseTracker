@@ -1,6 +1,4 @@
 package com.myexpensetracker.ExpenseTracker.controller;
-
-import com.myexpensetracker.ExpenseTracker.repository.ExpenseRepository;
 import com.myexpensetracker.ExpenseTracker.service.StatsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
