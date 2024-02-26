@@ -29,6 +29,23 @@ Expense Tracker is a simple web application designed to help users track their e
 4. **Saving to CSV**: Click on the "Save to CSV" button to save all expenses to a CSV file.
 5. **Viewing Statistics**: Click on the "Statistics" button to view statistics on expenses, including lowest, highest, and average costs.
 
+## LOGIN
+![Photo](https://github.com/matipt2/MyExpenseTracker/blob/main/github_images/view4.png)
+
+## EXPENSE VIEW
+![Photo](https://github.com/matipt2/MyExpenseTracker/blob/main/github_images/view1.png)
+
+## STATISTICS
+![Photo](https://github.com/matipt2/MyExpenseTracker/blob/main/github_images/view2.png)
+
+## PRINT
+![Photo](https://github.com/matipt2/MyExpenseTracker/blob/main/github_images/view3.png)
+
+
+
+
+
+
 ## Contributors
 
 This project was developed by Mateusz Ptasik. Feel free to contribute by submitting bug reports, feature requests, or pull requests.
