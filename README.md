@@ -21,16 +21,6 @@ Expense Tracker is a simple web application designed to help users track their e
 - **Apache Commons CSV**: Apache Commons CSV is used to handle CSV file operations.
 - **Chart.js**: Chart.js is used to create interactive charts for expense statistics.
 
-## Getting Started
-
-To run the Expense Tracker application locally, follow these steps:
-
-1. Clone the repository: `git clone <repository-url>`
-2. Navigate to the project directory: `cd ExpenseTracker`
-3. Build the project: `./mvnw clean package`
-4. Run the application: `java -jar target/ExpenseTracker-0.0.1-SNAPSHOT.jar`
-5. Access the application in your web browser at `http://localhost:8080`
-
 ## Usage
 
 1. **Adding Expense**: Click on the "Add New Expense" section, enter the description and price of the expense, then click "Add".
