@@ -41,15 +41,6 @@ Expense Tracker is a simple web application designed to help users track their e
 ## PRINT
 ![Photo](https://github.com/matipt2/MyExpenseTracker/blob/main/github_images/view3.png)
 
-
-
-
-
-
-## Contributors
-
-This project was developed by Mateusz Ptasik. Feel free to contribute by submitting bug reports, feature requests, or pull requests.
-
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
