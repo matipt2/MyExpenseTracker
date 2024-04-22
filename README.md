@@ -41,7 +41,3 @@ Expense Tracker is a simple web application designed to help users track their e
 ## PRINT
 ![Photo](https://github.com/matipt2/MyExpenseTracker/blob/main/github_images/view3.png)
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
